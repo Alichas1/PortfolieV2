@@ -11,7 +11,7 @@ const Contact = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "9f622d43-3aa6-41ca-9795-532e96e044ee");
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -35,7 +35,7 @@ const Contact = () => {
       transition={{ duration: 1 }}
       id="contact"
       className="w-full px-[12%] py-10 scroll-mt-20
-                 bg-[url('/footer.png')] bg-center bg-no-repeat bg-[lenght:90%_auto]"
+                 bg-[url('/footer.png')] bg-center bg-no-repeat bg-[length:90%_auto]"
     >
       <motion.h4
         initial={{ y: -20, opacity: 0 }}
