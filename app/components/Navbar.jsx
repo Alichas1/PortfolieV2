@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const sideMenuRef = useRef();
@@ -13,6 +13,18 @@ const Navbar = () => {
   const closeMenu = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
+
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -26,17 +38,16 @@ const Navbar = () => {
         />
       </div>
 
-      <nav className="flex items-center justify-between h-16 px-5 lg:px-8 xl:px-[8%] z-50 w-full fixed">
-        <Link href="#top" className="flex items-center cursor-pointer mr-14">
-          <Image
-            src="/Alidev.png"
-            alt="Alidev logo"
-            width={100}
-            height={40}
-            className="object-contain"
-            priority
-          />
-        </Link>
+      <nav
+        className={`flex items-center justify-between h-16 px-5 lg:px-8 xl:px-[8%] z-50 w-full fixed ${
+          isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadwo-sm" : ""
+        }`}
+      >
+        <div className="flex items-center cursor-pointer mr-14">
+          <a href="#top" className="text-2xl">
+            Ali.dev
+          </a>
+        </div>
 
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white/85 shadow-xs`}
