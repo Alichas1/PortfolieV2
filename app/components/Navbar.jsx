@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+      {/* <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image
           src="/header.png"
           alt="Header background"
@@ -36,7 +36,7 @@ const Navbar = () => {
           width={800}
           height={200}
         />
-      </div>
+      </div> */}
 
       <nav
         className={`flex items-center justify-between h-16 px-5 lg:px-8 xl:px-[8%] z-50 w-full fixed ${
