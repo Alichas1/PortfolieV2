@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth dark">
       <body
-        className={`${outfit.variable} ${ovo.variable} ${geistMono.variable} dark:bg-darkTheme dark:text-white`}
+        className={`${outfit.variable} ${ovo.variable} ${geistMono.variable}`} /*dark:bg-darkTheme dark:text-white*/
       >
         {children}
       </body>
