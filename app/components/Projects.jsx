@@ -14,23 +14,31 @@ const projects = [
     liveLink: "https://todo-list-lake-omega-84.vercel.app/",
   },
   {
-    title: "Pokemon Cards",
+    title: "CartShop",
     description:
-      "Vi har skapat en Pokémon-samling där man kan samla sina favoritkort. Projektet ger oss träning i global state-hantering med Redux eller Context API, att hämta och visa data från ett externt API samt att implementera bokmärkesfunktionalitet.",
-    image: "https://m.media-amazon.com/images/I/81U+9QM-aqL._AC_SL1500_.jpg",
-    tech: ["Next.js", "React", "PokemonAPI", "Context API", " Tailwindcss"],
-    codeLink: "https://github.com/username/chicken-crossing",
-    liveLink: "https://pokemon-one-bay.vercel.app/",
+      "RandomCartShop en React-webbutik med Redux, där användare kan bläddra produkter, se detaljer och hantera kundvagnen i realtid.",
+    image: "/cart.jpg",
+    tech: [
+      "React",
+      "React Router",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
+
+    codeLink: "https://github.com/Alichas1/Shopping-cart",
+    liveLink: "https://shopping-cart-seven-zeta-47.vercel.app/",
   },
   {
-    title: "Task Manager App",
+    title: "Movie App",
     description:
-      "A web app to create, edit, and track tasks with user authentication and real-time updates.",
-    image:
-      "https://media.istockphoto.com/id/506176142/sv/foto/vintage-radio.jpg?s=612x612&w=0&k=20&c=3ujqs3-qRrEaaStoKWFwf9IwWlnsS8cmsE0puqb4Pb0=",
-    tech: ["Javascript", "HTML", "css"],
-    codeLink: "https://github.com/Alichas1/Radioplayer",
-    liveLink: "https://radioplayer-tau.vercel.app/",
+      "I practiced building a movie app with search and favorite functionality, displaying movie details on hover.",
+    image: "/pic.jpg",
+    tech: ["React", "Fetch API", "CSS", "LocalStorage", "OMDb API"],
+    codeLink: "https://github.com/Alichas1/Movie-app",
+    liveLink: "https://movie-app-roan-three-48.vercel.app/",
   },
 ];
 
@@ -59,6 +67,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
+              viewport={{ once: true }}
               className="w-full md:w-1/2 flex justify-center bg-none"
             >
               <img
@@ -73,6 +82,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
+              viewport={{ once: true }}
               className="w-full md:w-1/2 flex flex-col justify-center space-y-4 mt-6 md:mt-0"
             >
               <h3 className="text-2xl font-semibold">{project.title}</h3>
@@ -86,6 +96,7 @@ export default function Projects() {
                 initial={{ x: 30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
+                viewport={{ once: true }}
                 className="flex flex-wrap gap-2"
               >
                 {project.tech.map((tech, idx) => (
@@ -104,6 +115,7 @@ export default function Projects() {
                   initial={{ y: 30, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.3 }}
+                  viewport={{ once: true }}
                   href={project.codeLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -116,6 +128,7 @@ export default function Projects() {
                   initial={{ y: 30, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.5 }}
+                  viewport={{ once: true }}
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"

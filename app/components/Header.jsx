@@ -12,6 +12,7 @@ const Header = () => {
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        viewport={{ once: true }}
       >
         <Image
           src="/profil.jpg"
@@ -26,6 +27,7 @@ const Header = () => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
         className="flex gap-2 text-3xl sm:text-6xl lg:text-[66px]"
       >
         Frontend developer{" "}
@@ -35,6 +37,7 @@ const Header = () => {
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: true }}
         className="max-w-2xl mx-auto text-center"
       >
         Hi! My name is Ali Yusuf. A passionate frontend developer <br /> based
@@ -49,6 +52,7 @@ const Header = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.7 }}
+          viewport={{ once: true }}
           href="https://www.linkedin.com/in/ali-yusuf-839992186/"
           className="transition-transform hover:scale-110"
         >
@@ -58,6 +62,7 @@ const Header = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.7 }}
+          viewport={{ once: true }}
           href="https://github.com/Alichas1"
           className="transition-transform hover:scale-110"
         >
@@ -70,6 +75,7 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
+          viewport={{ once: true }}
           href="#contact"
           className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2"
         >
@@ -86,6 +92,7 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
+          viewport={{ once: true }}
           href="/Ali-resume.pdf"
           download
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2"

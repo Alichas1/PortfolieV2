@@ -37,6 +37,7 @@ const Kompetens = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold"
           >
             Skills that I have
@@ -45,6 +46,7 @@ const Kompetens = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
             className="text-lg md:text-2xl text-gray-600"
           >
             These are the technologies I´ve worked with
@@ -58,6 +60,7 @@ const Kompetens = () => {
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
               key={i}
               className="mx-3 px-3 py-3 rounded-full text-sm md:text-base font-medium text-black transition overflow-hidden"
             >
@@ -79,6 +82,7 @@ const Kompetens = () => {
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
+              viewport={{ once: true }}
               key={i}
               className="mx-3 px-5 py-3 rounded-3xl text-sm md:text-base font-medium text-black transition overflow-hidden"
             >
