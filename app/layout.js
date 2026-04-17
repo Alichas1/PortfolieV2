@@ -1,4 +1,5 @@
 import { Outfit, Ovo, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -25,11 +26,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth dark">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${outfit.variable} ${ovo.variable} ${geistMono.variable}`} /*dark:bg-darkTheme dark:text-white*/
+        className={`${outfit.variable} ${ovo.variable} ${geistMono.variable} antialiased bg-stone-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

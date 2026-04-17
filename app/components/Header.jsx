@@ -56,7 +56,7 @@ const Header = () => {
           href="https://www.linkedin.com/in/ali-yusuf-839992186/"
           className="transition-transform hover:scale-110"
         >
-          <Image src="/linkedin.png" alt="" width={30} height={30} />
+          <Image src="/linkedin.png" alt="" width={30} height={30} className="dark:invert" />
         </motion.a>
         <motion.a
           initial={{ y: 20, opacity: 0 }}
@@ -66,7 +66,7 @@ const Header = () => {
           href="https://github.com/Alichas1"
           className="transition-transform hover:scale-110"
         >
-          <Image src="/github.png" alt="" width={30} height={30} />
+          <Image src="/github.png" alt="" width={30} height={30} className="dark:invert" />
         </motion.a>
       </div>
 
@@ -77,7 +77,7 @@ const Header = () => {
           transition={{ duration: 0.6, delay: 1 }}
           viewport={{ once: true }}
           href="#contact"
-          className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2"
+          className="px-10 py-3 border border-transparent rounded-full bg-black text-white dark:bg-white dark:text-black flex items-center gap-2"
         >
           contact me
           <Image
@@ -85,7 +85,7 @@ const Header = () => {
             alt=""
             width={100}
             height={50}
-            className="w-4"
+            className="w-4 dark:brightness-0"
           />
         </motion.a>
         <motion.a
@@ -95,7 +95,7 @@ const Header = () => {
           viewport={{ once: true }}
           href="/Ali-resume.pdf"
           download
-          className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2"
+          className="px-10 py-3 border rounded-full border-gray-500 dark:border-gray-500 flex items-center gap-2 transition-colors dark:hover:bg-gray-800"
         >
           my resume
           <Image
@@ -103,7 +103,7 @@ const Header = () => {
             alt=""
             width={100}
             height={50}
-            className="w-4"
+            className="w-4 dark:brightness-0 dark:invert"
           />
         </motion.a>
       </div>

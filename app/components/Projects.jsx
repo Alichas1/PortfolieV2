@@ -87,7 +87,7 @@ export default function Projects() {
             >
               <h3 className="text-2xl font-semibold">{project.title}</h3>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 {project.description}
               </p>
 
@@ -102,7 +102,7 @@ export default function Projects() {
                 {project.tech.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-black border text-white text-sm rounded-full"
+                    className="px-3 py-1 bg-black border border-black dark:bg-white dark:text-black dark:border-white text-white text-sm rounded-full"
                   >
                     {tech}
                   </span>
@@ -119,7 +119,7 @@ export default function Projects() {
                   href={project.codeLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 border border-black text-black rounded-lg hover:bg-black hover:text-white transition"
+                  className="flex items-center gap-2 px-4 py-2 border border-black text-black dark:border-white dark:text-white rounded-lg hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
                 >
                   <FaGithub /> Code
                 </motion.a>

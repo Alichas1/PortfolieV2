@@ -47,7 +47,7 @@ const Kompetens = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-lg md:text-2xl text-gray-600"
+            className="text-lg md:text-2xl text-gray-600 dark:text-gray-400"
           >
             These are the technologies I´ve worked with
           </motion.span>
@@ -62,7 +62,7 @@ const Kompetens = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: true }}
               key={i}
-              className="mx-3 px-3 py-3 rounded-full text-sm md:text-base font-medium text-black transition overflow-hidden"
+              className="mx-3 px-3 py-3 rounded-full text-sm md:text-base font-medium text-black dark:text-white transition overflow-hidden"
             >
               {skill}
             </motion.span>
@@ -84,7 +84,7 @@ const Kompetens = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               viewport={{ once: true }}
               key={i}
-              className="mx-3 px-5 py-3 rounded-3xl text-sm md:text-base font-medium text-black transition overflow-hidden"
+              className="mx-3 px-5 py-3 rounded-3xl text-sm md:text-base font-medium text-black dark:text-white transition overflow-hidden"
             >
               {skill}
             </motion.span>

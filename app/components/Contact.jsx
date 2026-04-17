@@ -1,42 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
-  const [result, setResult] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setLoading(true);
-    setResult("Sending...");
-
-    const formData = new FormData(event.target);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setResult("Form submitted successfully!");
-        event.target.reset();
-      } else {
-        setResult(`Error: ${data.message}`);
-      }
-    } catch (error) {
-      setResult("Something went wrong. Please try again later.");
-      console.error("Error submitting form:", error);
-    }
-
-    setLoading(false);
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -44,8 +11,7 @@ const Contact = () => {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
       id="contact"
-      className="w-full px-[12%] py-10 scroll-mt-20
-                 bg-[url('/footer.png')] bg-center bg-no-repeat bg-[length:90%_auto]"
+      className="w-full px-[12%] py-10 scroll-mt-20 flex flex-col items-center pb-24"
     >
       <motion.h4
         initial={{ y: -20, opacity: 0 }}
@@ -72,77 +38,27 @@ const Contact = () => {
         viewport={{ once: true }}
         className="text-center max-w-2xl mx-auto mt-5 mb-12"
       >
-        I'd love to hear from you! If you have any questions, comments, or
-        feedback, please use the form below.
+        I'd love to hear from you! Click the circle below to open your email client
+        and send me a message.
       </motion.p>
 
-      {/* Contact Form */}
-      <motion.form
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.9 }}
+      {/* Circular Email Button */}
+      <motion.a
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.9 }}
         viewport={{ once: true }}
-        onSubmit={onSubmit}
-        className="max-w-2xl mx-auto"
+        href="mailto:Ali.adam.y@hotmail.com"
+        className="w-48 h-48 flex flex-col justify-center items-center gap-3 rounded-full 
+                   bg-gradient-to-tr from-blue-600 via-purple-500 to-pink-500 
+                   dark:from-fuchsia-600 dark:to-cyan-500 text-white 
+                   shadow-lg transition-all duration-300 cursor-pointer mx-auto
+                   hover:-translate-y-2 hover:scale-[1.05] hover:shadow-[0_15px_40px_-5px_rgba(0,0,0,0.3)] 
+                   dark:hover:shadow-[0_15px_40px_-5px_rgba(255,255,255,0.2)]"
       >
-        <div className="grid grid-cols-2 gap-6 mt-10 mb-8">
-          <motion.input
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            viewport={{ once: true }}
-            type="text"
-            placeholder="Enter your Name"
-            required
-            aria-label="Your Name"
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
-            name="name"
-          />
-          <motion.input
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            viewport={{ once: true }}
-            type="email"
-            placeholder="Enter your Email"
-            required
-            aria-label="Your Email"
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
-            name="email"
-          />
-        </div>
-        <motion.textarea
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.3 }}
-          viewport={{ once: true }}
-          rows={6}
-          placeholder="Enter your Message"
-          required
-          aria-label="Your Message"
-          className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
-          name="message"
-        ></motion.textarea>
-        <motion.button
-          whileHover={!loading ? { scale: 1.05 } : {}}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
-          type="submit"
-          disabled={loading}
-          className={`py-3 px-8 w-max flex items-center justify-between gap-2 rounded-full mx-auto duration-500 
-            ${
-              loading
-                ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-black/80 text-white hover:bg-black cursor-pointer"
-            }`}
-        >
-          {loading ? "Sending..." : "Submit now"}
-          {!loading && (
-            <img src="/right-arrow-white.png" alt="arrow" className="w-4" />
-          )}
-        </motion.button>
-        <p className="mt-4 text-center">{result}</p>
-      </motion.form>
+        <FaEnvelope className="text-4xl" />
+        <span className="font-semibold text-lg tracking-wide">Email Me</span>
+      </motion.a>
     </motion.div>
   );
 };
