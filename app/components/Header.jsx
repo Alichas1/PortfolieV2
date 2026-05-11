@@ -88,24 +88,7 @@ const Header = () => {
             className="w-4 dark:brightness-0"
           />
         </motion.a>
-        <motion.a
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          viewport={{ once: true }}
-          href="/Ali-resume.pdf"
-          download
-          className="px-10 py-3 border rounded-full border-gray-500 dark:border-gray-500 flex items-center gap-2 transition-colors dark:hover:bg-gray-800"
-        >
-          my resume
-          <Image
-            src="/download-icon.png"
-            alt=""
-            width={100}
-            height={50}
-            className="w-4 dark:brightness-0 dark:invert"
-          />
-        </motion.a>
+
       </div>
     </div>
   );
